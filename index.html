@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photographe & Vidéaste Bretagne | MD</title>
+    <title>Photographe & Vidéaste en Bretagne | Maxime Dumesny</title>
+    <meta
+      name="description"
+      content="Maxime Dumesny, photographe et vidéaste basé en Bretagne, propose des services professionnels en photographie, vidéographie, montage et création de sites web sur mesure."
+    />
+    <meta name="author" content="Maxime Dumesny" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.votre-site.com/" />
+
+    <!-- Favicon -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -22,6 +31,8 @@
       href="public/favicon-16x16.png"
     />
     <link rel="manifest" href="public/site.webmanifest" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
       rel="stylesheet"
@@ -30,215 +41,254 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <script defer src="js/script.js"></script>
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      defer
+    ></script>
+    <script
+      src="https://www.google.com/recaptcha/api.js"
+      async
+      defer
+    ></script>
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="header">
       <div class="logo-container">
-        <img src="images/logo.png" alt="Logo Maxime Dumesny" class="logo-img" />
+        <img
+          src="public/images/logo.png"
+          alt="Logo Maxime Dumesny"
+          class="logo-img"
+          loading="lazy"
+        />
       </div>
-      <div class="theme-toggle" id="theme-toggle">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Changer le thème">
         <span id="theme-icon">🌙</span>
-      </div>
-      <nav class="nav">
+      </button>
+      <nav class="nav" aria-label="Navigation principale">
         <ul class="nav-links">
           <li><a href="#portfolio-video">Vidéos</a></li>
-          <li>-</li>
           <li><a href="#portfolio-photo">Photos</a></li>
-          <li>-</li>
-          <li><a href="#portfolio-web">Siteweb</a></li>
-          <li>-</li>
+          <li><a href="#portfolio-web">Sites Web</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li class="theme-toggle-mobile">
-            <a href="#" id="theme-toggle-mobile"
-              ><span id="theme-icon-mobile">🌙</span></a
-            >
-          </li>
         </ul>
-        <div class="burger"><span></span><span></span><span></span></div>
+        <button class="burger" aria-label="Menu mobile">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </header>
 
-    <section class="split-section">
-      <div class="split-container">
-        <div class="split-panel panel-left">
-          <div class="overlay-content">
-            <h2>Besoin de Photos/Vidéos ?</h2>
-            <a href="#portfolio-video" class="btn">Découvrir</a>
-            <a href="#contact" class="btn">On en discute ?</a>
-          </div>
-        </div>
-        <div class="split-panel panel-right">
-          <div class="overlay-content">
-            <h2>Besoin d'un nouveau site web ?</h2>
-            <a href="#portfolio-web" class="btn">Découvrir</a>
-            <a href="#contact" class="btn">On en discute ?</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about section about-section">
-      <div class="container parisienne">
-        <h3>Site web sur mesure, reportages Photo & Vidéo,</h3>
-        <h3>Pro ou Perso, tous les projets sont les bienvenus !</h3>
-      </div>
-      <div class="line-with-text">
-        <hr />
-        <p>Pays de Rennes (35) & Bretagne (Bzh).</p>
-      </div>
-    </section>
-
-    <section id="services" class="services section">
-      <div class="container">
-        <h2>Mes services</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <h3>Vidéographie</h3>
-            <p>
-              Réseaux sociaux, interviews, vidéos d’entreprise, aftermovies...
-            </p>
-            <a href="#contact" class="btn service-btn">On en discute ?</a>
-          </div>
-          <div class="service-card">
-            <h3>Site web</h3>
-            <p>Création de site web sur mesure, ou via un CMS...</p>
-            <a href="#contact" class="btn service-btn">On en discute ?</a>
-          </div>
-          <div class="service-card">
-            <h3>Photographie</h3>
-            <p>Shooting pro ou perso, événements, portraits, mariages...</p>
-            <a href="#contact" class="btn service-btn">On en discute ?</a>
-          </div>
-          <div class="service-card">
-            <h3>Montage</h3>
-            <p>
-              Montage vidéo/photo sur mesure, color grading, sound design...
-            </p>
-            <a href="#contact" class="btn service-btn">On en discute ?</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio-video" class="portfolio section">
-      <hr class="orange-divider" />
-      <div class="container wide-video-container">
-        <h2>Vidéos</h2>
-        <div class="video-grid">
-          <div class="video-item">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/55_h6Fvagqo"
-                title="Vidéo AALVIE"
-                allowfullscreen
-              ></iframe>
+    <main>
+      <section class="split-section">
+        <div class="split-container">
+          <div class="split-panel panel-left">
+            <div class="overlay-content">
+              <h2>Besoin de Photos/Vidéos ?</h2>
+              <a href="#portfolio-video" class="btn">Découvrir</a>
+              <a href="#contact" class="btn">On en discute ?</a>
             </div>
-            <p class="video-caption">
-              2024 - Film explicatif du projet AALVIE.
-            </p>
           </div>
-          <div class="video-item">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/7bfFU3yT75g"
-                title="Mariage"
-                allowfullscreen
-              ></iframe>
+          <div class="split-panel panel-right">
+            <div class="overlay-content">
+              <h2>Besoin d'un nouveau site web ?</h2>
+              <a href="#portfolio-web" class="btn">Découvrir</a>
+              <a href="#contact" class="btn">On en discute ?</a>
             </div>
-            <p class="video-caption">
-              2023 - Reportage vidéo du mariage de Marion & Christophe.
-            </p>
-          </div>
-          <div class="video-item">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/cMGnnUXx-UU"
-                title="L'institut Agro Rennes"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <p class="video-caption">
-              2022 - Film explicatif d'un projet ingénieur .
-            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="portfolio-web" class="portfolio section">
-      <hr class="orange-divider" />
-      <div class="container">
-        <h2>Sites web</h2>
-        <div class="site-card-grid">
-          <a href="https://mosaicoloing.com" class="site-card" target="_blank">
-            <div class="site-card-img">
+      <section id="about" class="about section">
+        <div class="container parisienne">
+          <h3>Site web sur mesure, reportages Photo & Vidéo,</h3>
+          <h3>Pro ou Perso, tous les projets sont les bienvenus !</h3>
+        </div>
+        <div class="line-with-text">
+          <hr />
+          <p>Pays de Rennes (35) & Bretagne (Bzh).</p>
+        </div>
+      </section>
+
+      <section id="services" class="services section">
+        <div class="container">
+          <h2>Mes services</h2>
+          <div class="services-grid">
+            <article class="service-card">
+              <h3>Vidéographie</h3>
+              <p>
+                Réseaux sociaux, interviews, vidéos d’entreprise, aftermovies...
+              </p>
+              <a href="#contact" class="btn service-btn">On en discute ?</a>
+            </article>
+            <article class="service-card">
+              <h3>Site web</h3>
+              <p>Création de site web sur mesure, ou via un CMS...</p>
+              <a href="#contact" class="btn service-btn">On en discute ?</a>
+            </article>
+            <article class="service-card">
+              <h3>Photographie</h3>
+              <p>Shooting pro ou perso, événements, portraits, mariages...</p>
+              <a href="#contact" class="btn service-btn">On en discute ?</a>
+            </article>
+            <article class="service-card">
+              <h3>Montage</h3>
+              <p>
+                Montage vidéo/photo sur mesure, color grading, sound design...
+              </p>
+              <a href="#contact" class="btn service-btn">On en discute ?</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio-video" class="portfolio section">
+        <hr class="orange-divider" />
+        <div class="container wide-video-container">
+          <h2>Vidéos</h2>
+          <div class="video-grid">
+            <article class="video-item">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/55_h6Fvagqo"
+                  title="Vidéo AALVIE"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">
+                2024 - Film explicatif du projet AALVIE.
+              </p>
+            </article>
+            <article class="video-item">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/7bfFU3yT75g"
+                  title="Mariage"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">
+                2023 - Reportage vidéo du mariage de Marion & Christophe.
+              </p>
+            </article>
+            <article class="video-item">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/cMGnnUXx-UU"
+                  title="L'institut Agro Rennes"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">
+                2022 - Film explicatif d'un projet ingénieur.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio-web" class="portfolio section">
+        <hr class="orange-divider" />
+        <div class="container">
+          <h2>Sites web</h2>
+          <div class="site-card-grid">
+            <a
+              href="https://mosaicoloing.com"
+              class="site-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="site-card-img">
+                <img
+                  src="public/images/mosaicoloing.png"
+                  alt="Aperçu du site Mosaicoloing"
+                  loading="lazy"
+                />
+              </div>
+              <div class="site-card-content">
+                <h3>Mosaicoloing</h3>
+                <p>
+                  2024 - Création d'un site vitrine pour un Mosaïste, en
+                  utilisant Wordpress.
+                </p>
+                <p>
+                  Réalisation du site, configuration de Wordpress puis mise à
+                  disposition du site pour le client.
+                </p>
+                <p>
+                  Résultat : Le client est autonome pour ajouter des photos,
+                  modifier des textes etc !
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              class="site-card"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="site-card-img">
+                <img
+                  src="public/images/siteweb.png"
+                  alt="Aperçu du site personnel"
+                  loading="lazy"
+                />
+              </div>
+              <div class="site-card-content">
+                <h3>Mon site web</h3>
+                <p>
+                  2025 - Création de ce site internet (HTML, CSS et JS), 100%
+                  réalisé par mes soins, dans le but de faire partager mes
+                  différents projets.
+                </p>
+                <p>
+                  Quel que soit votre projet, un site web est indispensable pour
+                  montrer votre travail, vos produits etc. N'hésitez pas à me
+                  contacter pour en discuter !
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio-photo" class="portfolio section">
+        <hr class="orange-divider" />
+        <div class="container">
+          <h2>Photos</h2>
+
+          <div class="subsection">
+            <h3>Photos de Mariage</h3>
+            <div class="gallery reveal-gallery">
               <img
-                src="images/mosaicoloing.png"
-                alt="Mosaicoloing site preview"
+                src="public/images/mariage1.jpg"
+                alt="Photo de mariage 1"
+                class="reveal"
+                loading="lazy"
               />
-            </div>
-            <div class="site-card-content">
-              <h3>Mosaicoloing</h3>
-              <p>
-                2024 - Création d'un site vitrine pour un Mosaïste, en utilisant
-                Wordpress.
-              </p>
-              <p>
-                Réalisation du site, configuration de Wordpress puis mise à
-                disposition du site pour le client.
-              </p>
-              <p>
-                Résultat : Le client est autonome pour ajouter des photos,
-                modifier des textes etc !
-              </p>
-            </div>
-          </a>
-
-          <a href="#" class="site-card" target="_blank">
-            <div class="site-card-img">
-              <img src="images/siteweb.png" alt="Site en cours" />
-            </div>
-            <div class="site-card-content">
-              <h3>Mon site web</h3>
-              <p>
-                2025 - Création de ce site internet (html, css et JS), 100%
-                réalisé par mes soins, dans le but de faire partager mes
-                différents projets.
-              </p>
-              <p>
-                Quelque soit votre projet, un site web est indispensable pour
-                montrer votre travail, vos produits etc. n'hésitez pas à me
-                contacter pour en discuter !
-              </p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio-photo" class="portfolio section">
-      <hr class="orange-divider" />
-      <div class="container">
-        <h2>Photos</h2>
-
-        <div class="subsection">
-          <h3>Photos de Mariage</h3>
-          <div class="gallery reveal-gallery">
-            <img src="images/mariage1.jpg" alt="Pro 1" class="reveal" />
-            <img src="images/mariage2.jpg" alt="Pro 2" class="reveal" />
-            <img src="images/mariage3.jpg" alt="Pro 3" class="reveal" />
-            <img src="images/mariage1.jpg" alt="Pro 1" class="reveal" />
-            <img src="images/mariage2.jpg" alt="Pro 2" class="reveal" />
-            <img src="images/mariage3.jpg" alt="Pro 3" class="reveal" />
-            <img src="images/mariage1.jpg" alt="Pro 1" class="reveal" />
-            <img src="images/mariage2.jpg" alt="Pro 2" class="reveal" />
+              <img
+                src="public/images/mariage2.jpg"
+                alt="Photo de mariage 2"
+                class="reveal"
+                loading="lazy"
+              />
+              <img
+              loading="lazy"
+              src="public/images/mariage3.jpg"
+              alt="Photo de mariage 3"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/images/mariage4.jpg"
+              alt="Photo de mariage 4"
+              class="reveal"
+            />
           </div>
           <a
             href="https://www.instagram.com/dumesny_maxime"
@@ -263,28 +313,98 @@
         <div class="subsection">
           <h3>Photos de vos animaux !</h3>
           <div class="gallery reveal-gallery">
-            <img src="public/chats/chat (1).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/chats/chat (2).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/chats/chat (3).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/chats/chat (4).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/chats/chat (5).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/chats/chat (6).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/chats/chat (7).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/chats/chat (8).jpg" alt="Perso 1" class="reveal" />
+            <img
+              loading="lazy"
+              src="public/chats/chat (1).jpg"
+              alt="Photo de chat 1"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/chats/chat (2).jpg"
+              alt="Photo de chat 2"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/chats/chat (3).jpg"
+              alt="Photo de chat 3"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/chats/chat (4).jpg"
+              alt="Photo de chat 4"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/chats/chat (5).jpg"
+              alt="Photo de chat 5"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/chats/chat (6).jpg"
+              alt="Photo de chat 6"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/chats/chat (7).jpg"
+              alt="Photo de chat 7"
+              class="reveal"
+            />
+            <img
+              loading="lazy"
+              src="public/chats/chat (8).jpg"
+              alt="Photo de chat 8"
+              class="reveal"
+            />
           </div>
           <hr class="orange-divider" />
           <div class="subsection">
-          <div class="gallery reveal-gallery">
-            <img src="public/vaches/vache (1).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/vaches/vache (2).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/vaches/vache (3).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/vaches/vache (4).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/vaches/vache (5).jpg" alt="Perso 1" class="reveal" />
-            <img src="public/vaches/vache (6).jpg" alt="Perso 1" class="reveal" />
+            <div class="gallery reveal-gallery">
+              <img
+                loading="lazy"
+                src="public/vaches/vache (1).jpg"
+                alt="Photo de vache 1"
+                class="reveal"
+              />
+              <img
+                loading="lazy"
+                src="public/vaches/vache (2).jpg"
+                alt="Photo de vache 2"
+                class="reveal"
+              />
+              <img
+                loading="lazy"
+                src="public/vaches/vache (3).jpg"
+                alt="Photo de vache 3"
+                class="reveal"
+              />
+              <img
+                loading="lazy"
+                src="public/vaches/vache (4).jpg"
+                alt="Photo de vache 4"
+                class="reveal"
+              />
+              <img
+                loading="lazy"
+                src="public/vaches/vache (5).jpg"
+                alt="Photo de vache 5"
+                class="reveal"
+              />
+              <img
+                loading="lazy"
+                src="public/vaches/vache (6).jpg"
+                alt="Photo de vache 6"
+                class="reveal"
+              />
+            </div>
           </div>
-        </div>
           <a
-            href="https://www.instagram.com/maxime.dumesny"
+            href="https://www.instagram.com/dumesny_maxime"
             class="btn insta-btn reveal"
             target="_blank"
           >
@@ -301,177 +421,140 @@
             </svg>
             Voir plus sur Instagram Animalier
           </a>
-        </div>
-      </div>
-      <hr class="orange-divider" />
-    </section>
-
-    <section id="portfolio-montage" class="portfolio section">
-      <div class="container wide-video-container">
-        <h2>Montage vidéos</h2>
-        <div class="video-grid">
-          <div class="video-item">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/q5n0FmQ2AFo"
-                title="Le Majordome"
-                allowfullscreen
-              ></iframe>
+          <section id="portfolio-montage" class="portfolio section">
+            <hr class="orange-divider" />
+            <div class="container wide-video-container">
+              <h2>Montage vidéos</h2>
+              <div class="video-grid">
+                <div class="video-item">
+                  <div class="video-wrapper">
+                    <iframe
+                      src="https://www.youtube.com/embed/q5n0FmQ2AFo"
+                      title="Le Majordome"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <p class="video-caption">
+                    Montage vidéo - Fusion de deux vidéos déjà existantes.
+                  </p>
+                </div>
+              </div>
             </div>
-            <p class="video-caption">
-              Montage vidéo - Fusion de deux vidéos déjà existantes.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact section">
-      <div class="container">
-        <h2>Contact</h2>
-
-        <form id="contact-form" class="contact-form">
-          <label for="user_name">Nom Prénom</label>
-          <input
-            type="text"
-            name="user_name"
-            id="user_name"
-            placeholder="Votre nom & prénom"
-            required
-          />
-
-          <label for="user_email">Email</label>
-          <input
-            type="email"
-            name="user_email"
-            id="user_email"
-            placeholder="Votre email"
-            required
-          />
-
-          <label for="user_phone">Téléphone</label>
-          <input
-            type="phone"
-            name="user_phone"
-            id="user_phone"
-            placeholder="06 00 00 00 00"
-          />
-
-          <fieldset class="checkbox-group">
-            <legend>Quels services vous intéressent ?</legend>
-            <label
-              ><input type="checkbox" name="services[]" value="Photographie" />
-              Photographie</label
-            >
-            <label
-              ><input type="checkbox" name="services[]" value="Vidéographie" />
-              Vidéographie</label
-            >
-            <label
-              ><input type="checkbox" name="services[]" value="Montage" />
-              Montage</label
-            >
-            <label
-              ><input
-                type="checkbox"
-                name="services[]"
-                value="Création de site web"
+          </section>
+      
+          <section id="contact" class="contact section">
+            <div class="container">
+              <h2>Contact</h2>
+              <form id="contact-form" class="contact-form">
+                <label for="user_name">Nom Prénom</label>
+                <input
+                  type="text"
+                  name="user_name"
+                  id="user_name"
+                  placeholder="Votre nom & prénom"
+                  required
+                />
+      
+                <label for="user_email">Email</label>
+                <input
+                  type="email"
+                  name="user_email"
+                  id="user_email"
+                  placeholder="Votre email"
+                  required
+                />
+      
+                <label for="user_phone">Téléphone</label>
+                <input
+                  type="tel"
+                  name="user_phone"
+                  id="user_phone"
+                  placeholder="06 00 00 00 00"
+                />
+      
+                <fieldset class="checkbox-group">
+                  <legend>Quels services vous intéressent ?</legend>
+                  <label><input type="checkbox" name="services[]" value="Photographie" /> Photographie</label>
+                  <label><input type="checkbox" name="services[]" value="Vidéographie" /> Vidéographie</label>
+                  <label><input type="checkbox" name="services[]" value="Montage" /> Montage</label>
+                  <label><input type="checkbox" name="services[]" value="Création de site web" /> Création de site web</label>
+                  <label><input type="checkbox" name="services[]" value="Autre" /> Autre</label>
+                </fieldset>
+      
+                <label for="message">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Votre message..."
+                  required
+                ></textarea>
+      
+                <div class="g-recaptcha" data-sitekey="6LdDrisrAAAAALHcgmVeLdYp8-c4bV0LyaIVDqMd"></div>
+      
+                <div id="form-loader" class="form-loader" style="display: none;">
+                  <div class="spinner"></div>
+                </div>
+      
+                <button type="submit">Envoyer</button>
+              </form>
+              <div id="form-message" class="form-message"></div>
+            </div>
+          </section>
+      
+          <footer class="footer">
+            <div class="footer-container">
+              <div class="footer-logo">
+                <img
+                  loading="lazy"
+                  src="public/images/logo.png"
+                  alt="Logo Maxime Dumesny"
+                />
+              </div>
+              <div class="footer-links">
+                <h4>Liens utiles</h4>
+                <ul>
+                  <li><a href="#portfolio-video">Vidéos</a></li>
+                  <li><a href="#portfolio-photo">Photos</a></li>
+                  <li><a href="#portfolio-web">Siteweb</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="mentions-legales.html">Mentions légales</a></li>
+                  <li><a href="cgv.html">CGV</a></li>
+                </ul>
+              </div>
+              <div class="footer-social">
+                <h4>Suivez-moi</h4>
+                <ul>
+                  <li><a href="https://www.instagram.com/dumesny_maxime" target="_blank">Instagram</a></li>
+                  <li><a href="https://wa.me/33633918176" target="_blank">Whatsapp</a></li>
+                </ul>
+              </div>
+              <div class="footer-social">
+                <h4>Contact direct</h4>
+                <ul>
+                  <li>06.33.91.81.76</li>
+                  <li>maximedumesny@gmail.com</li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>&copy; 2025 MD - Maxime Dumesny. Tous droits réservés.</p>
+            </div>
+          </footer>
+      
+          <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Retour en haut">
+            <svg class="scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 19V5M12 5L5 12M12 5L19 12"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               />
-              Création de site web</label
-            >
-            <label
-              ><input type="checkbox" name="services[]" value="Autre" />
-              Autre</label
-            >
-          </fieldset>
+            </svg>
+          </button>
+      
+          <div id="toast" class="toast"></div>
+        </body>
+      </html> 
 
-          <label for="message">Message</label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Votre message..."
-            required
-          ></textarea>
-
-          <div
-            class="g-recaptcha"
-            data-sitekey="6LdDrisrAAAAALHcgmVeLdYp8-c4bV0LyaIVDqMd"
-          ></div>
-
-          <div id="form-loader" class="form-loader" style="display: none">
-            <div class="spinner"></div>
-          </div>
-
-          <button type="submit">Envoyer</button>
-        </form>
-      </div>
-
-      <div id="form-message" class="form-message"></div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="images/logo.png" alt="Logo Maxime Dumesny" />
-        </div>
-        <div class="footer-links">
-          <h4>Liens utiles</h4>
-          <ul>
-            <li><a href="#portfolio-video">Vidéos</a></li>
-            <li><a href="#portfolio-photo">Photos</a></li>
-            <li><a href="#portfolio-web">Siteweb</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="cgv.html">CGV</a></li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <h4>Suivez-moi</h4>
-          <ul>
-            <li>
-              <a href="https://www.instagram.com/dumesny_maxime" target="_blank"
-                >Instagram</a
-              >
-            </li>
-            <li>
-              <a href="https://wa.me/33633918176" target="_blank">Whatsapp</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <h4>Contact direct</h4>
-          <ul>
-            <li>06.33.91.81.76</li>
-            <li>maximedumesny@gmail.com</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 MD - Maxime Dumesny. Tous droits réservés.</p>
-      </div>
-    </footer>
-
-    <button
-      class="scroll-to-top"
-      id="scrollToTopBtn"
-      aria-label="Retour en haut"
-    >
-      <svg
-        class="scroll-icon"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-      >
-        <path
-          d="M12 19V5M12 5L5 12M12 5L19 12"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-    <div id="toast" class="toast"></div>
-  </body>
-</html>
+ 
