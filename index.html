@@ -10,7 +10,7 @@
     />
     <meta name="author" content="Maxime Dumesny" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.votre-site.com/" />
+    <link rel="canonical" href="https://www.maximedumesny.fr/" />
 
     <!-- Favicon -->
     <link
@@ -41,9 +41,8 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Scripts -->
     <script
@@ -55,7 +54,9 @@
       async
       defer
     ></script>
-    <script src="js/script.js" defer></script>
+    <!-- Stylesheet -->
+<link rel="stylesheet" href="css/style.css" />
+<script defer src="js/script.js"></script>
   </head>
   <body>
     <header class="header">
@@ -76,6 +77,14 @@
           <li><a href="#portfolio-photo">Photos</a></li>
           <li><a href="#portfolio-web">Sites Web</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="mobile-business-card">
+            <div class="card-logo">
+              <img src="public/images/logo.png" alt="Logo Maxime Dumesny" />
+            </div>
+            <p>Maxime Dumesny</p>
+            <p>📧 maximedumesny@gmail.com</p>
+            <p>📞 06 33 91 81 76</p>
+          </li>          
         </ul>
         <button class="burger" aria-label="Menu mobile">
           <span></span><span></span><span></span>
@@ -88,16 +97,14 @@
         <div class="split-container">
           <div class="split-panel panel-left">
             <div class="overlay-content">
-              <h2>Besoin de Photos/Vidéos ?</h2>
+              <h2>Besoin de Photos & Vidéos ?</h2>
               <a href="#portfolio-video" class="btn">Découvrir</a>
-              <a href="#contact" class="btn">On en discute ?</a>
             </div>
           </div>
           <div class="split-panel panel-right">
             <div class="overlay-content">
               <h2>Besoin d'un nouveau site web ?</h2>
               <a href="#portfolio-web" class="btn">Découvrir</a>
-              <a href="#contact" class="btn">On en discute ?</a>
             </div>
           </div>
         </div>
@@ -423,7 +430,7 @@
           </a>
           <section id="portfolio-montage" class="portfolio section">
             <hr class="orange-divider" />
-            <div class="container wide-video-container">
+            <div class="container">
               <h2>Montage vidéos</h2>
               <div class="video-grid">
                 <div class="video-item">

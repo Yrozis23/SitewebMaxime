@@ -4,7 +4,20 @@ const navLinks = document.querySelector('.nav-links');
 
 burger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+  burger.classList.toggle('open'); // pour la croix aussi
 });
+
+// Fermer le menu au clic sur un lien
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    burger.classList.remove('open');
+  });
+});
+
+
 
 // Smooth scroll + close menu
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -77,24 +90,18 @@ function showFormMessage(text, type) {
 // ========== DARK MODE TOGGLE ==========
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
-const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-const themeIconMobile = document.getElementById('theme-icon-mobile');
 
 function applyTheme(isDark) {
   document.body.classList.toggle('dark-mode', isDark);
   const icon = isDark ? '☀️' : '🌙';
   themeIcon.textContent = icon;
-  themeIconMobile.textContent = icon;
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) applyTheme(savedTheme === 'dark');
 
-themeToggle?.addEventListener('click', () => {
-  applyTheme(!document.body.classList.contains('dark-mode'));
-});
-themeToggleMobile?.addEventListener('click', (e) => {
+themeToggle?.addEventListener('click', (e) => {
   e.preventDefault();
   applyTheme(!document.body.classList.contains('dark-mode'));
 });
