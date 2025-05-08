@@ -25,6 +25,8 @@ ul {
 img {
   max-width: 100%;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* ========== HEADER ========== */
@@ -202,7 +204,7 @@ body.dark-mode .burger span {
 }
 
 .panel-right {
-  background-image: url('../public/images/mariage31.png');
+  background-image: url('../public/images/code.jpg');
 }
 
 /* Hover effect */

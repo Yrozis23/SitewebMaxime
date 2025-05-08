@@ -561,6 +561,33 @@
           </button>
       
           <div id="toast" class="toast"></div>
+          <script>
+
+            document.addEventListener('contextmenu', (e) => e.preventDefault());
+          
+
+            document.addEventListener('keydown', (e) => {
+              if (
+                e.key === "F12" ||                            
+                (e.ctrlKey && e.shiftKey && e.key === "i") || 
+                (e.ctrlKey && e.shiftKey && e.key === "j") || 
+                (e.ctrlKey && e.key === "U") ||
+                (e.ctrlKey && e.key === "u") ||                
+                (e.ctrlKey && e.shiftKey && e.key === "c")    
+              ) {
+                e.preventDefault();
+              }
+            });
+          </script>
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('contextmenu', e => e.preventDefault());
+                img.setAttribute('draggable', 'false');
+              });
+            });
+          </script>
+          
         </body>
       </html> 
 
