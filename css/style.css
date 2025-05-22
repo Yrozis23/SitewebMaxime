@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   color: #111;
   line-height: 1.6;
   padding-top: 160px;
+  overflow-x: hidden;
 }
 
 a {
