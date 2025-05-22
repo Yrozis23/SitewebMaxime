@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+      name="description"
+      content="Maxime Dumesny, photographe et vidéaste basé en Bretagne, propose des services professionnels en photographie, vidéographie, montage et création de sites web sur mesure."
+    />
+    <meta name="author" content="Maxime Dumesny" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.maximedumesny.fr/" />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="public/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="public/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="public/favicon-16x16.png"
+    />
+    <link rel="manifest" href="public/site.webmanifest" />
+  <title>Pierre Feuille Ciseaux</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    #info {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .buttons button {
+      font-size: 20px;
+      padding: 15px 25px;
+      margin: 10px;
+      border-radius: 12px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .buttons button:hover {
+      background-color: #45a049;
+    }
+    #choix, #resultat, #score {
+      font-size: 20px;
+      margin-top: 15px;
+    }
+    #rejouer {
+      font-size: 18px;
+      padding: 12px 20px;
+      margin-top: 25px;
+      border-radius: 10px;
+      border: none;
+      background-color: #2196F3;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+    #rejouer:hover {
+      background-color: #0b7dda;
+    }
+        .btn {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: white;
+      background-color: #ff6347;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #fc6d54;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pierre – Feuille – Ciseaux</h1>
+    <p id="info">Choisis ton coup :</p>
+    <div class="buttons">
+      <button onclick="jouer('pierre')">🪨 Pierre</button>
+      <button onclick="jouer('feuille')">📄 Feuille</button>
+      <button onclick="jouer('ciseaux')">✂️ Ciseaux</button>
+    </div>
+    <p id="choix"></p>
+    <p id="resultat"></p>
+    <p id="score">Score – Toi : 0 | Ordi : 0</p>
+    <button id="rejouer" onclick="rejouer()">🔁 Rejouer</button>
+  </div>
+
+  <script>
+    let scoreJoueur = 0;
+    let scoreOrdi = 0;
+
+    function jouer(choixJoueur) {
+      if (scoreJoueur >= 3 || scoreOrdi >= 3) return;
+
+      const options = ["pierre", "feuille", "ciseaux"];
+      const emojis = { pierre: "🪨", feuille: "📄", ciseaux: "✂️" };
+      const choixOrdi = options[Math.floor(Math.random() * 3)];
+
+      document.getElementById("choix").textContent =
+        `Tu as choisi ${emojis[choixJoueur]} | Ordi : ${emojis[choixOrdi]}`;
+
+      let resultat = "";
+      if (choixJoueur === choixOrdi) {
+        resultat = "🤝 Égalité !";
+      } else if (
+        (choixJoueur === "pierre" && choixOrdi === "ciseaux") ||
+        (choixJoueur === "feuille" && choixOrdi === "pierre") ||
+        (choixJoueur === "ciseaux" && choixOrdi === "feuille")
+      ) {
+        scoreJoueur++;
+        resultat = "✅ Tu gagnes ce tour !";
+      } else {
+        scoreOrdi++;
+        resultat = "❌ L'ordinateur gagne ce tour.";
+      }
+
+      document.getElementById("resultat").textContent = resultat;
+      document.getElementById("score").textContent =
+        `Score – Toi: ${scoreJoueur} | Ordi: ${scoreOrdi}`;
+
+      if (scoreJoueur === 3 || scoreOrdi === 3) {
+        const final =
+          scoreJoueur === 3 ? "🏆 Tu as gagné la partie !" : "💻 L'ordinateur a gagné...";
+        document.getElementById("resultat").textContent = final;
+        document.getElementById("rejouer").style.display = "inline-block";
+      }
+    }
+
+    function rejouer() {
+      scoreJoueur = 0;
+      scoreOrdi = 0;
+      document.getElementById("choix").textContent = "";
+      document.getElementById("resultat").textContent = "";
+      document.getElementById("score").textContent = "Score – Toi: 0 | Ordi: 0";
+      document.getElementById("rejouer").style.display = "none";
+    }
+  </script>
+  <a href="index.html" class="btn">⬅ Retour au site</a>
+</body>
+</html>

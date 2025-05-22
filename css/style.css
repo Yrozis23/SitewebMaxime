@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -619,6 +620,13 @@ body.dark-mode .video-caption {
   margin-top: 40px;
   font-size: 0.9rem;
   color: #888;
+  padding-top: 20px;
+}
+.footer-bottom-jeu {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.4rem;
+  color: #b3b2b2;
   padding-top: 20px;
 }
 
