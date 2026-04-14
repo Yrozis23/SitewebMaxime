@@ -41,7 +41,8 @@ export default function Navbar({ onOpenSettings }: NavbarProps) {
     >
       <div className="max-w-[1400px] mx-auto px-5 md:px-6 flex items-center justify-between h-14">
         {/* Logo */}
-        <a href="#" className="text-base font-bold tracking-tight text-text" aria-label="Accueil - Maxime Dumesny">
+        <a href="#" className="flex items-center gap-2 text-base font-bold tracking-tight text-text" aria-label="Accueil - Maxime Dumesny">
+          <img src="/logo.png" alt="" className="w-6 h-6 rounded-md" aria-hidden="true" />
           {siteConfig.name}
         </a>
 

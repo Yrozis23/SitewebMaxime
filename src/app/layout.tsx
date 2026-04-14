@@ -7,6 +7,10 @@ export const metadata: Metadata = {
     "Maxime Dumesny crée des logiciels SaaS modernes et des sites web sur mesure. Découvrez VetCare et mes projets.",
   authors: [{ name: "Maxime Dumesny" }],
   robots: "index, follow",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Maxime Dumesny | Développeur Web & SaaS",
     description: "Des logiciels modernes et des sites web sur mesure.",
