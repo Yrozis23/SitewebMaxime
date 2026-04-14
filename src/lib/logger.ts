@@ -1,5 +1,4 @@
 type LogLevel = "info" | "warn" | "error" | "debug";
-
 const isDev = process.env.NODE_ENV === "development";
 
 function log(level: LogLevel, module: string, message: string, data?: unknown) {

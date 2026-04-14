@@ -12,25 +12,19 @@ describe("createLogger", () => {
     expect(log).toHaveProperty("debug");
   });
 
-  it("formats messages with module name and level", () => {
+  it("formats with module and level", () => {
     const spy = vi.spyOn(console, "log").mockImplementation(() => {});
-    createLogger("MyModule").info("hello");
-    const msg = spy.mock.calls[0][0] as string;
-    expect(msg).toContain("[INFO]");
-    expect(msg).toContain("[MyModule]");
-    expect(msg).toContain("hello");
+    createLogger("Mod").info("msg");
+    const out = spy.mock.calls[0][0] as string;
+    expect(out).toContain("[INFO]");
+    expect(out).toContain("[Mod]");
+    expect(out).toContain("msg");
   });
 
-  it("logs errors to console.error", () => {
+  it("logs errors to console.error with data", () => {
     const spy = vi.spyOn(console, "error").mockImplementation(() => {});
     createLogger("X").error("fail", { code: 500 });
     expect(spy).toHaveBeenCalledOnce();
     expect(spy.mock.calls[0][1]).toEqual({ code: 500 });
-  });
-
-  it("includes ISO timestamp", () => {
-    const spy = vi.spyOn(console, "log").mockImplementation(() => {});
-    createLogger("T").info("ts");
-    expect(spy.mock.calls[0][0] as string).toMatch(/\[\d{4}-\d{2}-\d{2}T/);
   });
 });

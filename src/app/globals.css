@@ -1,36 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #050507;
-  --color-bg-card: #0a0a10;
-  --color-bg-card-hover: #0f0f18;
-  --color-text: #e4e4e7;
-  --color-text-muted: #71717a;
-  --color-accent: #6366f1;
-  --color-accent-hover: #818cf8;
-  --color-medical: #22d3ee;
-  --color-medical-hover: #67e8f9;
-  --color-contact: #f59e0b;
-  --color-contact-hover: #fbbf24;
-  --color-side: #10b981;
-  --color-side-hover: #34d399;
-  --font-sans: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  --color-bg: var(--color-bg);
+  --color-bg-alt: var(--color-bg-alt);
+  --color-bg-card: var(--color-bg-card);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
 }
 
+/* ========== THEME TOKENS ========== */
+:root {
+  --color-accent: #6366f1;
+  --color-accent-hover: #818cf8;
+
+  /* Surfaces */
+  --color-bg: #fafafa;
+  --color-bg-alt: #f4f4f5;
+  --color-bg-card: #ffffff;
+  --color-border: #e4e4e7;
+
+  /* Text */
+  --color-text: #18181b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #a1a1aa;
+
+  /* Fonts */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+}
+
+.dark {
+  --color-bg: #09090b;
+  --color-bg-alt: #111113;
+  --color-bg-card: #18181b;
+  --color-border: #27272a;
+  --color-text: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #52525b;
+}
+
+/* ========== BASE ========== */
 html {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-sans);
   scroll-behavior: smooth;
+  font-family: var(--font-sans);
 }
 
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   min-height: 100dvh;
   background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
@@ -38,7 +65,7 @@ body {
   color: white;
 }
 
-/* Skip link (RGAA) */
+/* ========== SKIP LINK (RGAA) ========== */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -60,22 +87,60 @@ body {
   outline-offset: 2px;
 }
 
-/* Focus visible (RGAA) */
+/* ========== FOCUS (RGAA) ========== */
 :focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* Reduced motion (RGAA) */
+/* ========== RGAA MODE ========== */
+.rgaa-mode {
+  --color-text: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #555555;
+  font-size: 112.5%; /* 18px base */
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.rgaa-mode.dark {
+  --color-text: #ffffff;
+  --color-text-secondary: #cccccc;
+  --color-text-muted: #aaaaaa;
+}
+.rgaa-mode * {
+  border-radius: 4px !important;
+}
+.rgaa-mode img {
+  outline: 2px solid var(--color-text-muted);
+}
+@media (max-width: 767px) {
+  .rgaa-mode {
+    font-size: 106.25%; /* 17px on mobile — less aggressive */
+  }
+  .rgaa-mode h1 { font-size: 2rem !important; }
+  .rgaa-mode h2 { font-size: 1.5rem !important; }
+}
+
+/* ========== REDUCED MOTION ========== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--color-text-muted); border-radius: 3px; }
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-text-muted); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-secondary); }
+
+/* ========== UTILITY ========== */
+.text-balance { text-wrap: balance; }
+.section-padding { padding-left: 1.5rem; padding-right: 1.5rem; }
+@media (min-width: 768px) { .section-padding { padding-left: 3rem; padding-right: 3rem; } }
+@media (min-width: 1280px) { .section-padding { padding-left: 6rem; padding-right: 6rem; } }
