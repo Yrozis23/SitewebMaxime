@@ -139,6 +139,10 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--color-text-muted); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-text-secondary); }
 
+/* ========== BEFORE/AFTER SLIDER ========== */
+.ba-clip { clip-path: inset(0 0 0 var(--divider-x)); }
+.ba-pos  { left: var(--divider-x); }
+
 /* ========== UTILITY ========== */
 .text-balance { text-wrap: balance; }
 .section-padding { padding-left: 1.5rem; padding-right: 1.5rem; }

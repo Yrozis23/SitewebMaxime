@@ -11,13 +11,26 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/in/maximedumesny",
 };
 
-export const projects = [
+export interface Project {
+  id: string;
+  name: string;
+  subtitle: string;
+  description: string;
+  tech: string[];
+  status: "En staging" | "En production" | "En développement" | "Live";
+  url: string;
+  gradient: string;
+  accent: string;
+  redesignUrl?: string;
+}
+
+export const projects: Project[] = [
   {
     id: "vetcare",
     name: "VetCare",
     subtitle: "SaaS pour cliniques veterinaires",
     description:
-      "Gestion complete d'une clinique veterinaire : dossiers patients, consultations, prescriptions, agenda, facturation, pharmacovigilance, gestion des hospitalisations, etc.",
+      "Gestion complète d'une clinique vétérinaire : dossiers patients, consultations, prescriptions, agenda, facturation, pharmacovigilance, gestion des hospitalisations, etc.",
     tech: ["Next.js", "TypeScript", "React", "Prisma", "PostgreSQL", "Tailwind CSS", "Framer Motion", "NextAuth", "Resend", "Vercel", "Docker", "Git"],
     status: "En staging" as const,
     url: "https://vetcare.maximedumesny.fr",
@@ -29,10 +42,11 @@ export const projects = [
     name: "Mosaicoloing",
     subtitle: "Site vitrine pour artisan mosaiste",
     description:
-      "Création d'un site vitrine sur mesure avec Wordpress pour un mosaïste. Le client est autonome pour gérer son contenu.",
-    tech: ["WordPress", "PHP", "CSS", "SEO"],
+      "Site vitrine WordPress livré pour un mosaïste. En cours de modernisation vers Next.js avec galerie dynamique, formations, blog et backoffice maison.",
+    tech: ["WordPress", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma", "Framer Motion"],
     status: "En production" as const,
     url: "https://mosaicoloing.com",
+    redesignUrl: "https://mosaicoloing.maximedumesny.fr",
     gradient: "from-amber-400 to-orange-600",
     accent: "#f59e0b",
   },
