@@ -21,7 +21,7 @@ const navItems = [
 
 const viewport = { once: true, margin: "-50px" };
 
-export default function VetCareMockup() {
+export default function VetoxiaMockup() {
   return (
     <div className="relative w-full h-full min-h-52 md:min-h-125 rounded-xl overflow-hidden bg-[#0f1117] p-3 md:p-5 select-none" aria-hidden="true">
       {/* Browser chrome */}
@@ -33,7 +33,7 @@ export default function VetCareMockup() {
         </div>
         <div className="flex-1 mx-2 md:mx-4">
           <div className="bg-[#1a1d27] rounded-md md:rounded-lg px-2 md:px-4 py-1 text-[8px] md:text-[11px] text-gray-400 text-center font-mono truncate">
-            vetcare.maximedumesny.fr/agenda
+            vetoxia.maximedumesny.fr/agenda
           </div>
         </div>
       </div>
