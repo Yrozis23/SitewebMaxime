@@ -26,14 +26,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "vetcare",
-    name: "VetCare",
-    subtitle: "SaaS pour cliniques veterinaires",
+    id: "vetoxia",
+    name: "Vetoxia",
+    subtitle: "SaaS pour cliniques vétérinaires",
     description:
       "Gestion complète d'une clinique vétérinaire : dossiers patients, consultations, prescriptions, agenda, facturation, pharmacovigilance, gestion des hospitalisations, etc.",
     tech: ["Next.js", "TypeScript", "React", "Prisma", "PostgreSQL", "Tailwind CSS", "Framer Motion", "NextAuth", "Resend", "Vercel", "Docker", "Git"],
     status: "En staging" as const,
-    url: "https://vetcare.maximedumesny.fr",
+    url: "https://vetoxia.maximedumesny.fr",
     gradient: "from-cyan-400 to-blue-600",
     accent: "#22d3ee",
   },

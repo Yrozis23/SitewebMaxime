@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Maxime Dumesny | Développeur Web & SaaS",
   description:
-    "Maxime Dumesny crée des logiciels SaaS modernes et des sites web sur mesure. Découvrez VetCare et mes projets.",
+    "Maxime Dumesny crée des logiciels SaaS modernes et des sites web sur mesure. Découvrez Vetoxia et mes projets.",
   authors: [{ name: "Maxime Dumesny" }],
   robots: "index, follow",
   icons: {

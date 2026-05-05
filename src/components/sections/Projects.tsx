@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/constants/content";
-import VetCareMockup from "@/components/cards/VetCareMockup";
+import VetoxiaMockup from "@/components/cards/VetoxiaMockup";
 import { OldSiteMockup, NewSiteMockup } from "@/components/cards/MosaicoloingMockups";
 import PortfolioMockup from "@/components/cards/PortfolioMockup";
 import SafeZoneMockup from "@/components/cards/SafeZoneMockup";
@@ -13,7 +13,7 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
-const vetcare = projects.find((p) => p.id === "vetcare")!;
+const vetoxia = projects.find((p) => p.id === "vetoxia")!;
 const safezone = projects.find((p) => p.id === "safezone")!;
 const mosaicoloing = projects.find((p) => p.id === "mosaicoloing")!;
 const portfolio = projects.find((p) => p.id === "portfolio")!;
@@ -172,7 +172,7 @@ function MosaicoloingCard() {
   );
 }
 
-function VetCareCard() {
+function VetoxiaCard() {
   return (
     <motion.article
       initial="hidden"
@@ -183,20 +183,20 @@ function VetCareCard() {
     >
       <div className="grid md:grid-cols-2">
         <div className="p-2 md:p-4">
-          <VetCareMockup />
+          <VetoxiaMockup />
         </div>
         <div className="px-5 py-4 md:p-8 flex flex-col justify-center">
           <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 w-fit mb-3 md:mb-4">
-            {vetcare.status}
+            {vetoxia.status}
           </span>
-          <h3 className="text-xl md:text-3xl font-bold text-text mb-1 md:mb-2">{vetcare.name}</h3>
-          <p className="text-xs md:text-sm text-text-muted mb-3 md:mb-4">{vetcare.subtitle}</p>
+          <h3 className="text-xl md:text-3xl font-bold text-text mb-1 md:mb-2">{vetoxia.name}</h3>
+          <p className="text-xs md:text-sm text-text-muted mb-3 md:mb-4">{vetoxia.subtitle}</p>
           <p className="text-xs md:text-sm leading-relaxed mb-4 md:mb-6 text-text-secondary">
-            {vetcare.description}
+            {vetoxia.description}
           </p>
           <div className="flex items-center gap-3 mb-4 md:mb-6">
-            <TechPopover tech={vetcare.tech} />
-            <span className="text-[11px] text-text-muted">{vetcare.tech.length} technologies</span>
+            <TechPopover tech={vetoxia.tech} />
+            <span className="text-[11px] text-text-muted">{vetoxia.tech.length} technologies</span>
           </div>
           <p className="text-xs md:text-sm leading-relaxed mb-4 md:mb-6 text-text-secondary italic">
             Si vous êtes vétérinaire, n&apos;hésitez pas à tester le projet et
@@ -205,7 +205,7 @@ function VetCareCard() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href={vetcare.url}
+              href={vetoxia.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs md:text-sm font-medium transition-colors text-emerald-400 hover:text-emerald-300"
@@ -252,7 +252,7 @@ export default function Projects() {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="mb-8">
           <h3 className="text-xl md:text-2xl font-bold tracking-tight text-text">Mon projet ambitieux</h3>
         </motion.div>
-        <VetCareCard />
+        <VetoxiaCard />
 
         {/* Side Projects */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp} className="mt-16 mb-8">
