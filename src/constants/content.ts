@@ -33,7 +33,7 @@ export const projects: Project[] = [
       "Gestion complète d'une clinique vétérinaire : dossiers patients, consultations, prescriptions, agenda, facturation, pharmacovigilance, gestion des hospitalisations, etc.",
     tech: ["Next.js", "TypeScript", "React", "Prisma", "PostgreSQL", "Tailwind CSS", "Framer Motion", "NextAuth", "Resend", "Vercel", "Docker", "Git"],
     status: "En staging" as const,
-    url: "https://vetoxia.maximedumesny.fr",
+    url: "https://staging.vetoxia.fr",
     gradient: "from-cyan-400 to-blue-600",
     accent: "#22d3ee",
   },

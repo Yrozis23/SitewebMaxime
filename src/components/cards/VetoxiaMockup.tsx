@@ -33,7 +33,7 @@ export default function VetoxiaMockup() {
         </div>
         <div className="flex-1 mx-2 md:mx-4">
           <div className="bg-[#1a1d27] rounded-md md:rounded-lg px-2 md:px-4 py-1 text-[8px] md:text-[11px] text-gray-400 text-center font-mono truncate">
-            vetoxia.maximedumesny.fr/agenda
+            staging.vetoxia.fr/agenda
           </div>
         </div>
       </div>
