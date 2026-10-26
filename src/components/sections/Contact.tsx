@@ -33,9 +33,10 @@ export default function Contact() {
       name: fd.get("name") as string,
       email: fd.get("email") as string,
       message: fd.get("message") as string,
+      website: fd.get("website") as string,
     };
 
-    log.info("Contact form submitted", { name: data.name, email: data.email });
+    log.info("Contact form submitted");
 
     try {
       const res = await fetch("/api/contact", {
@@ -65,23 +66,20 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 md:py-32 section-padding" aria-label="Contact">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-350 mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeUp}
         >
-          <p className="text-sm font-medium tracking-wide mb-3 text-accent">
-            Contact
-          </p>
-          <h2
-            className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-text"
-          >
-            Travaillons ensemble
+          <p className="eyebrow mb-4">Contact</p>
+          <h2 className="text-4xl md:text-6xl leading-[1.05] mb-6 text-text text-balance">
+            Parlons de votre projet
           </h2>
           <p className="text-lg max-w-2xl mb-16 text-text-secondary">
-            Un projet en tête ? Une question ? N&apos;hésitez pas à me contacter.
+            Décrivez-moi votre besoin en quelques lignes : je reviens vers vous rapidement avec une première
+            proposition.
           </p>
         </motion.div>
 
@@ -102,7 +100,7 @@ export default function Contact() {
                   href={link.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className="flex items-center justify-between p-5 rounded-2xl border transition-all duration-200 group bg-bg-card border-border hover:border-accent"
+                  className="flex items-center justify-between p-5 rounded-2xl card-premium group"
                   aria-label={`${link.label}: ${link.value}${isExternal ? " (nouvelle fenêtre)" : ""}`}
                 >
                   <div>
@@ -139,7 +137,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <p className="text-lg font-semibold mb-1 text-text">Message envoyé !</p>
-                  <p className="text-sm text-text-muted mb-4">Je vous répondrai rapidement.</p>
+                  <p className="text-sm text-text-muted mb-4">Merci ! Je vous répondrai rapidement.</p>
                   <button
                     type="button"
                     onClick={() => setSent(false)}
@@ -150,29 +148,34 @@ export default function Contact() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5 relative">
+                {/* Honeypot anti-spam : invisible pour les humains */}
+                <div className="absolute -left-2499.75 w-px h-px overflow-hidden" aria-hidden="true">
+                  <label htmlFor="c-website">Ne pas remplir</label>
+                  <input type="text" id="c-website" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
                 <div>
                   <label htmlFor="c-name" className="block text-sm font-medium mb-1.5 text-text">Nom</label>
                   <input
-                    type="text" id="c-name" name="name" required autoComplete="name"
+                    type="text" id="c-name" name="name" required maxLength={100} autoComplete="name"
                     placeholder="Votre nom"
-                    className="w-full px-4 py-3 rounded-xl border text-sm transition-colors outline-none bg-bg-alt border-border text-text focus:border-accent"
+                    className="w-full px-4 py-3.5 rounded-xl border text-sm transition-colors outline-none bg-bg-alt border-border text-text focus:border-accent"
                   />
                 </div>
                 <div>
                   <label htmlFor="c-email" className="block text-sm font-medium mb-1.5 text-text">Email</label>
                   <input
-                    type="email" id="c-email" name="email" required autoComplete="email"
+                    type="email" id="c-email" name="email" required maxLength={200} autoComplete="email"
                     placeholder="votre@email.com"
-                    className="w-full px-4 py-3 rounded-xl border text-sm transition-colors outline-none bg-bg-alt border-border text-text focus:border-accent"
+                    className="w-full px-4 py-3.5 rounded-xl border text-sm transition-colors outline-none bg-bg-alt border-border text-text focus:border-accent"
                   />
                 </div>
                 <div>
                   <label htmlFor="c-msg" className="block text-sm font-medium mb-1.5 text-text">Message</label>
                   <textarea
-                    id="c-msg" name="message" required rows={5}
+                    id="c-msg" name="message" required rows={5} maxLength={5000}
                     placeholder="Votre message..."
-                    className="w-full px-4 py-3 rounded-xl border text-sm transition-colors outline-none resize-none bg-bg-alt border-border text-text focus:border-accent"
+                    className="w-full px-4 py-3.5 rounded-xl border text-sm transition-colors outline-none resize-none bg-bg-alt border-border text-text focus:border-accent"
                   />
                 </div>
                 {error && (
@@ -181,7 +184,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full py-3.5 rounded-xl text-sm font-semibold text-white transition-all hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed bg-accent"
+                  className="w-full py-4 rounded-xl text-sm font-semibold text-white transition-all hover:brightness-110 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed bg-accent"
                 >
                   {sending ? "Envoi en cours..." : "Envoyer le message"}
                 </button>

@@ -1,15 +1,14 @@
-"use client";
-
+import Image from "next/image";
 import { siteConfig } from "@/constants/content";
 
 export default function Footer() {
   return (
-    <footer className="py-12 section-padding border-t border-border" role="contentinfo">
-      <div className="max-w-[1400px] mx-auto flex flex-col gap-8">
+    <footer className="py-12 section-padding border-t border-border">
+      <div className="max-w-350 mx-auto flex flex-col gap-8">
         {/* Top row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="" className="w-5 h-5 rounded-md" aria-hidden="true" />
+            <Image src="/logo.png" alt="" width={20} height={20} className="w-5 h-5 rounded-md" aria-hidden="true" />
             <div>
               <p className="text-sm font-semibold text-text">{siteConfig.name}</p>
               <p className="text-xs text-text-muted">{siteConfig.title} &middot; {siteConfig.location}</p>

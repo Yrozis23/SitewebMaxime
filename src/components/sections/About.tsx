@@ -9,15 +9,15 @@ const fadeUp = {
 };
 
 const stats = [
-  { value: "4+", label: "Projets livrés ou en cours" },
-  { value: "2026", label: "Début de mon plus gros projet" },
-  { value: "100%", label: "Passion" },
+  { value: "3", label: "Projets en ligne" },
+  { value: "100 %", label: "Sur mesure, zéro template" },
+  { value: "FR · EN", label: "Sites bilingues" },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32 section-padding" aria-label="A propos">
-      <div className="max-w-[1400px] mx-auto">
+    <section id="about" className="py-24 md:py-32 section-padding" aria-label="À propos">
+      <div className="max-w-350 mx-auto">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           {/* Left: text */}
           <motion.div
@@ -26,17 +26,13 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
           >
-            <p className="text-sm font-medium tracking-wide mb-3 text-accent">
-              A propos
-            </p>
-            <h2
-              className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-text"
-            >
+            <p className="eyebrow mb-4">À propos</p>
+            <h2 className="text-4xl md:text-6xl leading-[1.05] mb-8 text-text text-balance">
               Créer des outils qui comptent
             </h2>
             <div className="space-y-4 text-base leading-relaxed text-text-secondary">
               <p>
-                Moi c&apos;est Maxime, développeur web en {siteConfig.location}.
+                Moi c&apos;est Maxime, développeur web indépendant en {siteConfig.location}.
                 J&apos;aime créer des outils qui simplifient vraiment la vie
                 des gens qui les utilisent.
               </p>
@@ -66,9 +62,9 @@ export default function About() {
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="text-center p-4 md:p-6 rounded-2xl border bg-bg-card border-border"
+                  className="text-center p-4 md:p-6 rounded-2xl card-premium"
                 >
-                  <p className="text-2xl md:text-3xl font-bold text-accent">
+                  <p className="font-display text-3xl md:text-4xl text-accent">
                     {stat.value}
                   </p>
                   <p className="text-xs mt-1 text-text-muted">
@@ -80,10 +76,10 @@ export default function About() {
 
             {/* Quote card */}
             <div
-              className="p-8 rounded-2xl border bg-bg-card border-border"
+              className="p-8 md:p-10 rounded-3xl border bg-bg-card border-border"
             >
               <blockquote>
-                <p className="text-lg italic leading-relaxed text-text-secondary">
+                <p className="font-display text-2xl md:text-3xl italic leading-snug text-text">
                   &ldquo;Un logiciel réussi, c&apos;est du temps gagné chaque jour.&rdquo;
                 </p>
               </blockquote>

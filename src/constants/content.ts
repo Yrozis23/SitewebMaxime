@@ -1,15 +1,47 @@
 export const siteConfig = {
   name: "Maxime Dumesny",
+  url: "https://maximedumesny.fr",
   title: "Développeur Web & SaaS",
   tagline: "Des logiciels modernes pour tous",
   description:
-    "Je conçois des solutions SaaS modernes et performantes, adaptées à chaque besoin.",
+    "Sites vitrines, logiciels SaaS et refontes sur mesure : je transforme votre besoin en un outil rapide, élégant et simple à utiliser.",
   location: "Bretagne",
   email: "maximedumesny@gmail.com",
   phone: "06 33 91 81 76",
   phoneHref: "tel:+33633918176",
   linkedin: "https://www.linkedin.com/in/maximedumesny",
 };
+
+export const services = [
+  {
+    id: "vitrine",
+    title: "Site vitrine sur mesure",
+    description:
+      "Un site qui vous ressemble, rapide, bien référencé et pensé pour convertir vos visiteurs en clients. Sans template, sans compromis.",
+    points: ["Design unique et responsive", "SEO et performance soignés", "Bilingue et accessible si besoin"],
+  },
+  {
+    id: "saas",
+    title: "Logiciel & SaaS",
+    description:
+      "Outils métier, back-offices, plateformes : je conçois et développe le logiciel qui automatise ce qui vous fait perdre du temps.",
+    points: ["Authentification et rôles", "Facturation, agenda, tableaux de bord", "Hébergement et maintenance"],
+  },
+  {
+    id: "refonte",
+    title: "Refonte & modernisation",
+    description:
+      "Votre site vieillit ou devient difficile à gérer ? Je le reconstruis avec une base moderne, en gardant votre contenu et votre référencement.",
+    points: ["Audit de l'existant", "Migration sans perte de contenu", "Back-office simple à prendre en main"],
+  },
+];
+
+export const workflow = [
+  { step: "01", title: "Échange", description: "On discute de votre besoin, de vos objectifs et de votre budget. Devis détaillé à l'issue de l'échange." },
+  { step: "02", title: "Conception", description: "Maquettes et architecture validées avec vous avant d'écrire la moindre ligne de code." },
+  { step: "03", title: "Développement", description: "Livraisons régulières sur un environnement de test : vous voyez le projet avancer." },
+  { step: "04", title: "Mise en ligne", description: "Déploiement, formation à la prise en main et suivi après livraison." },
+];
 
 export interface Project {
   id: string;
@@ -36,6 +68,18 @@ export const projects: Project[] = [
     url: "https://staging.vetoxia.fr",
     gradient: "from-cyan-400 to-blue-600",
     accent: "#22d3ee",
+  },
+  {
+    id: "mesetmarais",
+    name: "Mès & Marais",
+    subtitle: "Site de précommande pour une éleveuse de crevettes",
+    description:
+      "Site éditorial bilingue (FR/EN) pour une éleveuse de crevettes des marais salants de Piriac-sur-Mer : présentation de l'élevage, carte interactive du marais et réservation en ligne pour retrait à l'atelier.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    status: "En production" as const,
+    url: "https://mesetmarais.maximedumesny.fr",
+    gradient: "from-teal-400 to-cyan-700",
+    accent: "#14b8a6",
   },
   {
     id: "mosaicoloing",

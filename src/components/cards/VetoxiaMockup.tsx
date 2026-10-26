@@ -43,7 +43,7 @@ export default function VetoxiaMockup() {
         <div className="hidden md:flex flex-col w-32 shrink-0">
           <div className="mb-5">
             <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
-              <span className="text-emerald-400 text-xs font-bold">VC</span>
+              <span className="text-emerald-400 text-xs font-bold">V</span>
             </div>
           </div>
           <nav className="space-y-1.5">
@@ -88,7 +88,7 @@ export default function VetoxiaMockup() {
           {/* Agenda */}
           <div className="bg-[#1a1d27] rounded-lg md:rounded-xl p-2 md:p-4 flex-1">
             <div className="flex items-center justify-between mb-1.5 md:mb-3">
-              <p className="text-[9px] md:text-xs font-semibold text-gray-300">Mardi 3 avril 2025</p>
+              <p className="text-[9px] md:text-xs font-semibold text-gray-300">Mardi 14 octobre</p>
               <div className="flex gap-1">
                 <div className="w-4 md:w-7 h-2 md:h-3.5 rounded-full bg-emerald-500/40" />
                 <div className="w-4 md:w-7 h-2 md:h-3.5 rounded-full bg-gray-600/40" />
@@ -163,7 +163,7 @@ export default function VetoxiaMockup() {
         transition={{ delay: 1.1, duration: 0.4 }}
         className="hidden md:block absolute bottom-6 right-6 bg-[#1a1d27] border border-gray-700/50 rounded-xl px-4 py-3 shadow-xl"
       >
-        <p className="text-[10px] text-gray-400 mb-1">Chiffre d&apos;affaires — avril</p>
+        <p className="text-[10px] text-gray-400 mb-1">Chiffre d&apos;affaires — octobre</p>
         <p className="text-lg font-bold text-gray-100">3 240 €</p>
         <div className="flex gap-0.5 mt-1.5">
           {[3, 4, 6, 8, 7, 9].map((h, i) => (

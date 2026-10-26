@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { siteConfig, projects, stack, colorThemes } from "@/constants/content";
+import { siteConfig, projects, stack, colorThemes, services, workflow } from "@/constants/content";
 
 describe("siteConfig", () => {
   it("has all required fields", () => {
@@ -7,7 +7,7 @@ describe("siteConfig", () => {
     expect(siteConfig.email).toContain("@");
     expect(siteConfig.phoneHref).toMatch(/^tel:\+/);
     expect(siteConfig.linkedin).toMatch(/^https:\/\//);
-    expect(siteConfig.github).toMatch(/^https:\/\//);
+    expect(siteConfig.url).toMatch(/^https:\/\//);
     expect(siteConfig.tagline).toBeTruthy();
     expect(siteConfig.description).toBeTruthy();
   });
@@ -16,6 +16,11 @@ describe("siteConfig", () => {
 describe("projects", () => {
   it("has at least 4 projects", () => {
     expect(projects.length).toBeGreaterThanOrEqual(4);
+  });
+
+  it("includes Mès & Marais right after Vetoxia", () => {
+    const ids = projects.map((p) => p.id);
+    expect(ids.indexOf("mesetmarais")).toBe(ids.indexOf("vetoxia") + 1);
   });
 
   it("each project has required fields", () => {
@@ -27,6 +32,17 @@ describe("projects", () => {
       expect(p.gradient).toContain("from-");
       expect(p.accent).toMatch(/^#/);
     });
+  });
+});
+
+describe("services & process", () => {
+  it("lists services with points", () => {
+    expect(services.length).toBeGreaterThanOrEqual(3);
+    services.forEach((s) => expect(s.points.length).toBeGreaterThan(0));
+  });
+
+  it("has ordered process steps", () => {
+    expect(workflow.map((p) => p.step)).toEqual(["01", "02", "03", "04"]);
   });
 });
 

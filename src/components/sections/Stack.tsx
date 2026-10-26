@@ -11,20 +11,16 @@ const fadeUp = {
 export default function Stack() {
   return (
     <section id="stack" className="py-24 md:py-32 section-padding" aria-label="Stack technique">
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-350 mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeUp}
         >
-          <p className="text-sm font-medium tracking-wide mb-3 text-accent">
-            Stack
-          </p>
-          <h2
-            className="text-3xl md:text-5xl font-bold tracking-tight mb-16 text-text"
-          >
-            Technologies que j&apos;utilise
+          <p className="eyebrow mb-4">Stack</p>
+          <h2 className="text-4xl md:text-6xl leading-[1.05] mb-16 text-text text-balance">
+            Des technologies modernes et éprouvées
           </h2>
         </motion.div>
 
@@ -45,16 +41,16 @@ export default function Stack() {
               >
                 {group.category}
               </h3>
-              <div className="space-y-2">
+              <ul className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <div
+                  <li
                     key={item}
-                    className="px-4 py-3 rounded-xl border text-sm font-medium transition-all duration-200 hover:translate-x-1 bg-bg-card border-border text-text hover:border-accent hover:text-accent"
+                    className="px-3.5 py-2 rounded-full border text-sm font-medium transition-colors duration-200 bg-bg-card border-border text-text hover:border-accent hover:text-accent"
                   >
                     {item}
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>

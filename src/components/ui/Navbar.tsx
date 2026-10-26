@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { siteConfig } from "@/constants/content";
 
@@ -9,16 +10,35 @@ interface NavbarProps {
 }
 
 const navLinks = [
+  { label: "Services", href: "#services" },
   { label: "Projets", href: "#projects" },
-  { label: "A propos", href: "#about" },
-  { label: "Stack", href: "#stack" },
-  { label: "Contact", href: "#contact" },
+  { label: "Méthode", href: "#process" },
+  { label: "À propos", href: "#about" },
 ];
+
+const sectionIds = ["services", "projects", "process", "about", "stack", "contact"];
 
 export default function Navbar({ onOpenSettings }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [active, setActive] = useState("");
   const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive(e.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 50));
 
@@ -27,7 +47,7 @@ export default function Navbar({ onOpenSettings }: NavbarProps) {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-8 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-1/2 z-30 transition-all duration-300 rounded-2xl"
+      className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-auto md:min-w-176 z-30 transition-all duration-300 rounded-2xl"
       style={{
         background: "color-mix(in srgb, var(--color-bg-card) 80%, transparent)",
         backdropFilter: "blur(16px)",
@@ -42,21 +62,31 @@ export default function Navbar({ onOpenSettings }: NavbarProps) {
       <div className="max-w-[1400px] mx-auto px-5 md:px-6 flex items-center justify-between h-14">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 text-base font-bold tracking-tight text-text" aria-label="Accueil - Maxime Dumesny">
-          <img src="/logo.png" alt="" className="w-6 h-6 rounded-md" aria-hidden="true" />
+          <Image src="/logo.png" alt="" width={24} height={24} className="w-6 h-6 rounded-md" aria-hidden="true" priority />
           {siteConfig.name}
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors hover:opacity-100 text-text-secondary hover:text-accent"
+              className={`text-sm font-medium transition-colors hover:text-text ${
+                active === link.href.slice(1) ? "text-text" : "text-text-secondary"
+              }`}
+              {...(active === link.href.slice(1) ? { "aria-current": "location" as const } : {})}
             >
               {link.label}
             </a>
           ))}
+
+          <a
+            href="#contact"
+            className="px-4 py-2 rounded-full text-sm font-semibold text-white bg-accent transition-all hover:brightness-110"
+          >
+            Discutons de votre projet
+          </a>
 
           {/* Settings button */}
           <button
@@ -118,6 +148,13 @@ export default function Navbar({ onOpenSettings }: NavbarProps) {
               {link.label}
             </a>
           ))}
+          <a
+            href="#contact"
+            onClick={() => setMobileOpen(false)}
+            className="block mt-2 py-3 rounded-full text-center text-sm font-semibold text-white bg-accent"
+          >
+            Discutons de votre projet
+          </a>
         </motion.div>
       )}
     </motion.nav>
