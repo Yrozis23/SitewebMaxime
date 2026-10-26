@@ -59,7 +59,7 @@ export default function Navbar({ onOpenSettings }: NavbarProps) {
       role="navigation"
       aria-label="Navigation principale"
     >
-      <div className="max-w-[1400px] mx-auto px-5 md:px-6 flex items-center justify-between h-14">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-6 flex items-center justify-between gap-8 md:gap-12 h-14">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 text-base font-bold tracking-tight text-text" aria-label="Accueil - Maxime Dumesny">
           <Image src="/logo.png" alt="" width={24} height={24} className="w-6 h-6 rounded-md" aria-hidden="true" priority />

@@ -76,7 +76,7 @@ export const projects: Project[] = [
     description:
       "Site éditorial bilingue (FR/EN) pour une éleveuse de crevettes des marais salants de Piriac-sur-Mer : présentation de l'élevage, carte interactive du marais et réservation en ligne pour retrait à l'atelier.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "En production" as const,
+    status: "En staging" as const,
     url: "https://mesetmarais.maximedumesny.fr",
     gradient: "from-teal-400 to-cyan-700",
     accent: "#14b8a6",
