@@ -25,10 +25,6 @@ export const metadata: Metadata = {
   creator: siteConfig.name,
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/logo.png",
-  },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
