@@ -72,9 +72,9 @@ export const projects: Project[] = [
   {
     id: "mesetmarais",
     name: "Mès & Marais",
-    subtitle: "Site de précommande pour une éleveuse de crevettes",
+    subtitle: "Site vitrine et réservation en ligne pour une éleveuse de crevettes",
     description:
-      "Site éditorial bilingue (FR/EN) pour une éleveuse de crevettes des marais salants de Piriac-sur-Mer : présentation de l'élevage, carte interactive du marais et réservation en ligne pour retrait à l'atelier.",
+      "Site éditorial pour une éleveuse des marais salants de Piriac-sur-Mer : carte interactive du marais, journal d'élevage et réservation en ligne pour retrait à l'atelier. Livré avec un back-office sur mesure pour gérer dates de retrait, commandes, clients et e-mails automatiques.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "En staging" as const,
     url: "https://mesetmarais.maximedumesny.fr",
