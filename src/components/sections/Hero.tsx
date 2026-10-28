@@ -9,7 +9,7 @@ const HeroBlob = dynamic(() => import("@/components/ui/HeroBlob"), { ssr: false 
 const proofs = [
   { value: "3", label: "projets en ligne" },
   { value: "100 %", label: "sur mesure" },
-  { value: "FR · EN", label: "sites bilingues" },
+  { value: "Bretagne", label: "développeur web freelance" },
 ];
 
 export default function Hero() {

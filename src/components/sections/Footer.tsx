@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { siteConfig } from "@/constants/content";
+import { servicePages } from "@/constants/servicePages";
 
 export default function Footer() {
   return (
@@ -29,6 +30,15 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+        {/* Services */}
+        <nav aria-label="Services" className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2">
+          {servicePages.map((p) => (
+            <a key={p.slug} href={`/services/${p.slug}`} className="text-xs text-text-muted hover:text-accent transition-colors">
+              {p.name}
+            </a>
+          ))}
+        </nav>
 
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-border">

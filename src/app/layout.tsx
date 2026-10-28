@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces, JetBrains_Mono } from "next/font/google";
 import { siteConfig } from "@/constants/content";
+import { servicePages } from "@/constants/servicePages";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
@@ -60,18 +61,37 @@ const jsonLd = {
       url: SITE_URL,
       email: siteConfig.email,
       telephone: siteConfig.phone,
+      image: `${SITE_URL}/logo.png`,
       sameAs: [siteConfig.linkedin],
       address: { "@type": "PostalAddress", addressRegion: siteConfig.location, addressCountry: "FR" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: siteConfig.name,
+      inLanguage: "fr-FR",
+      publisher: { "@id": `${SITE_URL}/#person` },
     },
     {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#service`,
       name: `${siteConfig.name} — Développeur Web & SaaS`,
       url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+      image: `${SITE_URL}/logo.png`,
       description: DESCRIPTION,
-      areaServed: "FR",
+      areaServed: [{ "@type": "AdministrativeArea", name: siteConfig.location }, { "@type": "Country", name: "France" }],
       provider: { "@id": `${SITE_URL}/#person` },
       knowsAbout: ["Développement web", "SaaS", "Next.js", "React", "Refonte de site"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services",
+        itemListElement: servicePages.map((p) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: p.name, url: `${SITE_URL}/services/${p.slug}` },
+        })),
+      },
     },
   ],
 };

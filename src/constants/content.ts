@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Développeur Web & SaaS",
   tagline: "Des logiciels modernes pour tous",
   description:
-    "Sites vitrines, logiciels SaaS et refontes sur mesure : je transforme votre besoin en un outil rapide, élégant et simple à utiliser.",
+    "Développeur web freelance en Bretagne : sites vitrines, logiciels SaaS et refontes sur mesure. Je transforme votre besoin en un outil rapide, élégant et simple à utiliser.",
   location: "Bretagne",
   email: "maximedumesny@gmail.com",
   phone: "06 33 91 81 76",

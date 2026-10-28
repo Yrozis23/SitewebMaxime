@@ -2,7 +2,12 @@
 
 import { motion } from "framer-motion";
 import { services } from "@/constants/content";
+import { servicePages } from "@/constants/servicePages";
 import SectionHeader from "@/components/ui/SectionHeader";
+
+const servicePageBySlug: Record<string, string> = Object.fromEntries(
+  servicePages.map((p) => [p.serviceId, p.slug]),
+);
 
 export default function Services() {
   return (
@@ -41,6 +46,16 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
+              {servicePageBySlug[service.id] && (
+                <a
+                  href={`/services/${servicePageBySlug[service.id]}`}
+                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"
+                >
+                  En savoir plus
+                  <span className="sr-only"> sur {service.title}</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              )}
             </motion.article>
           ))}
         </div>

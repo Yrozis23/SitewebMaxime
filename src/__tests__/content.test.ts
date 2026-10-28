@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { siteConfig, projects, stack, colorThemes, services, workflow } from "@/constants/content";
+import { servicePages, getServicePage } from "@/constants/servicePages";
 
 describe("siteConfig", () => {
   it("has all required fields", () => {
@@ -43,6 +44,25 @@ describe("services & process", () => {
 
   it("has ordered process steps", () => {
     expect(workflow.map((p) => p.step)).toEqual(["01", "02", "03", "04"]);
+  });
+});
+
+describe("servicePages", () => {
+  it("has one page per service with unique slugs", () => {
+    expect(new Set(servicePages.map((p) => p.slug)).size).toBe(servicePages.length);
+    services.forEach((s) => {
+      expect(servicePages.some((p) => p.serviceId === s.id)).toBe(true);
+    });
+  });
+
+  it("each page has SEO fields within Google display limits", () => {
+    servicePages.forEach((p) => {
+      expect(p.seoTitle.length).toBeLessThanOrEqual(65);
+      expect(p.seoDescription.length).toBeLessThanOrEqual(160);
+      expect(p.faq.length).toBeGreaterThan(0);
+      expect(getServicePage(p.slug)).toBe(p);
+      p.relatedProjects.forEach((id) => expect(projects.some((pr) => pr.id === id)).toBe(true));
+    });
   });
 });
 

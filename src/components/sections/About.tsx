@@ -11,7 +11,7 @@ const fadeUp = {
 const stats = [
   { value: "3", label: "Projets en ligne" },
   { value: "100 %", label: "Sur mesure, zéro template" },
-  { value: "FR · EN", label: "Sites bilingues" },
+  { value: "A à Z", label: "Du devis à la maintenance" },
 ];
 
 export default function About() {
